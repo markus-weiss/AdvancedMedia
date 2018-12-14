@@ -53,7 +53,7 @@ public class Vertices : MonoBehaviour {
 
     void setRadius()
     {
-        radius = Random.Range(2, 5);
+        //radius = Random.Range(2, 5);
         var i = 0;
         foreach (Transform child in transform)
         {
