@@ -47,7 +47,7 @@ public class Vertices : MonoBehaviour {
             radius++;
             setRadius();
         }
-        print(radius);
+        //print(radius);
         setRadius();
     }
 
