@@ -61,9 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DeviationsAngle.cs" />
     <Compile Include="Assets\IcoSphereCreator\IcoSphereCreator.cs" />
     <Compile Include="Assets\Scripts\ConeRendererController.cs" />
     <Compile Include="Assets\Scripts\ReverseNormals.cs" />
+    <Compile Include="Assets\Scripts\UI_ControllerScript.cs" />
     <Compile Include="Assets\Scripts\Vertices.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestThrow.cs" />
@@ -233,26 +235,17 @@
     <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Lightweight.Runtime">
       <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
@@ -260,11 +253,20 @@
     <Reference Include="Unity.RenderPipelines.Lightweight.Editor">
       <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.IncludePaths">
       <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Library/ScriptAssemblies/Unity.RenderPipelines.Core.IncludePaths.dll</HintPath>
@@ -470,14 +472,14 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.14f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Valve.Newtonsoft.Json">
+      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/schnu/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/schnu/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>F:/Studium/AdvancedMedia/PatenteStereopsis/HFU_PatenteStereopsisProblem_WS1819/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

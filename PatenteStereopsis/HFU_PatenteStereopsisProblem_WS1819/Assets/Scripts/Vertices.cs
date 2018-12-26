@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Vertices : MonoBehaviour {
 
-    [Range(0.01f,3)]
+    [Range(0.01f,30)]
     public float radius;
 
     //Unfinish
