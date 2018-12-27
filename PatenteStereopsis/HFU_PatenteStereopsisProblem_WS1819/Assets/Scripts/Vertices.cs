@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Vertices : MonoBehaviour {
 
-    [Range(0.01f,30)]
+    [Range(0.01f,1)]
     public float radius;
 
     //Unfinish
     [Range(1, 8)]
     public float scale;
     
-
     Mesh mesh;
     public Vector3[] vertices;
     Vector3[] verticesOrigin;
@@ -32,33 +32,38 @@ public class Vertices : MonoBehaviour {
         vertices = mesh.vertices;
         verticesOrigin = mesh.vertices;
 
+        //print(mesh.vertexCount);
+       
+        List<Vector3> VertexList = new List<Vector3>();
         foreach(Vector3 vertex in vertices)
         {
-            inst =  Instantiate(prefab, vertex, Quaternion.identity);
+            //print(vertex);
+            VertexList.Add(vertex);
+        }
+        VertexList = VertexList.Distinct().ToList();
+
+        //print(VertexList.Count);
+
+        foreach (Vector3 vertex in VertexList)
+        {
+            //print(vertex);
+            inst = Instantiate(prefab, vertex, transform.rotation);
             inst.transform.SetParent(transform);
             //Layer.Add(inst);
-            float dist = Vector3.Distance(inst.transform.position, transform.position);
+            //float dist = Vector3.Distance(inst.transform.position, transform.position);
             //print("Distance to other: " + dist);
+            print(inst.transform.position);    
         }
+        
+
     }
 
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            radius--;
-            setRadius();
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            radius++;
-            setRadius();
-        }
-        //print(radius);
-        setRadius();
-        setScale();
+        //setRadius();
+        //setScale();
 
     }
 

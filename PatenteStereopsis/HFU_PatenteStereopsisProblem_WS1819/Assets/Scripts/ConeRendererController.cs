@@ -7,8 +7,8 @@ public class ConeRendererController : MonoBehaviour {
     //LineRenderer lineRenderer;
     private Transform lineTarget;
 
-    public Transform startObject;
-    public int lengthOfLineRenderer = 20;
+    private Transform startObject;
+    public int lengthOfLineRenderer;
 
     //Linrenderer Colors
     Color c1;
@@ -22,9 +22,7 @@ public class ConeRendererController : MonoBehaviour {
 
     private void Update()
     {
-
-
-
+        //Set Objects
         startObject = transform.parent;
         lineTarget = transform;
 
