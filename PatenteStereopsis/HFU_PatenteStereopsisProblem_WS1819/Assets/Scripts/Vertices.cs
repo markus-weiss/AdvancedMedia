@@ -13,8 +13,9 @@ public class Vertices : MonoBehaviour {
     public float scale;
     
     Mesh mesh;
-    public Vector3[] vertices;
+    private Vector3[] vertices;
     Vector3[] verticesOrigin;
+    List<Vector3> VertexList;
 
     public GameObject lookAtTarget;
     public GameObject prefab;
@@ -28,43 +29,29 @@ public class Vertices : MonoBehaviour {
 
     void Start()
     {
+        VertexList = new List<Vector3>();
         mesh = GetComponent<MeshFilter>().mesh;
         vertices = mesh.vertices;
-        verticesOrigin = mesh.vertices;
 
-        //print(mesh.vertexCount);
-       
-        List<Vector3> VertexList = new List<Vector3>();
-        foreach(Vector3 vertex in vertices)
+        foreach (Vector3 vertex in vertices)
         {
-            //print(vertex);
             VertexList.Add(vertex);
         }
         VertexList = VertexList.Distinct().ToList();
 
-        //print(VertexList.Count);
-
         foreach (Vector3 vertex in VertexList)
         {
-            //print(vertex);
-            inst = Instantiate(prefab, vertex, transform.rotation);
+            inst = Instantiate(prefab, vertex, Quaternion.identity);
             inst.transform.SetParent(transform);
-            //Layer.Add(inst);
-            //float dist = Vector3.Distance(inst.transform.position, transform.position);
-            //print("Distance to other: " + dist);
-            print(inst.transform.position);    
+            inst.transform.LookAt(transform);
+            inst.transform.Rotate(Vector3.right, 90);
         }
-        
-
     }
-
-
 
     void Update()
     {
-        //setRadius();
-        //setScale();
-
+        setRadius();
+        setScale();
     }
 
     void setScale()
@@ -84,18 +71,17 @@ public class Vertices : MonoBehaviour {
         {
             // set all spawned childs in distance to 0 0 0 with radius
             // have to set to Player
-            child.position = new Vector3(verticesOrigin[i].x * radius, verticesOrigin[i].y * radius, verticesOrigin[i].z * radius);
-            
-            // Look at Target
-            child.transform.LookAt(lookAtTarget.transform);
-            
-            // To look at target in y - direction
-            //Unfinsih
-            child.transform.Rotate(Vector3.right, 90);
+            child.position = new Vector3(VertexList[i].x * radius, VertexList[i].y * radius, VertexList[i].z * radius);
 
             i++;
         }
         i = 0;
 
+    }
+
+    //Is the fastest way to get it!
+    public float GetRadius()
+    {
+        return VertexList[0].y * radius;
     }
 }

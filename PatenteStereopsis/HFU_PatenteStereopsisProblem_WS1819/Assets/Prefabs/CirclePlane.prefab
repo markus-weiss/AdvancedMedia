@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816484e15a721c74586c118366a006d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startObject: {fileID: 0}
   lengthOfLineRenderer: 20
 --- !u!120 &120376542081705338
 LineRenderer:
