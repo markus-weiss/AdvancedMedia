@@ -12,7 +12,10 @@ public class UI_ControllerScript : MonoBehaviour {
     [Range(4,29)]
     public Slider uIFernpunktSlider;
 
+    public Text uiDeviationText;
+    [Range(-2,2)]
     public Slider uiDeviationAngleSlider;
+    private float devSliderValue;
 
     public Camera topDownCamera;
     public Camera fristPersonCamera;
@@ -35,6 +38,10 @@ public class UI_ControllerScript : MonoBehaviour {
 		
 	}
 
+    public float getDevSliderValue()
+    {
+        return uiDeviationAngleSlider.value;
+    }
 
     public float getUIDevAngleSlider()
     {
@@ -53,4 +60,10 @@ public class UI_ControllerScript : MonoBehaviour {
         return vRKegelToggle.isOn;
     }
 
+    public void setDeviationSliderText()
+    {
+
+       // uiDeviationText.text = devSliderValue.ToString("00") + "m";
+
+    }
 }

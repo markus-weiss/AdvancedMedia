@@ -15,7 +15,7 @@ public class DeviationsAngle : MonoBehaviour {
     //public Camera vrCam;
     public Transform vrCAMTrans;
 
-    [Range(10,100)]
+    [Range(-5,5)]
     public float deviationAngle;
 
     [Range(0.04f, 0.07f)]
@@ -48,7 +48,11 @@ public class DeviationsAngle : MonoBehaviour {
         float FernpunktAngle = Mathf.Atan(fernPunktDistanceToZero  / halfEyeDist);
 
 
-        NahPunktDistanceToZero = Mathf.Tan(FernpunktAngle -deviationAngle) *  halfEyeDist;
+        NahPunktDistanceToZero = Mathf.Tan(FernpunktAngle - deviationAngle) *  halfEyeDist;
+
+        //print(deviationAngle);
+  
+        //uiController.GetComponent<>
 
         //print(NahPunktDistanceToZero);
 
@@ -91,6 +95,8 @@ public class DeviationsAngle : MonoBehaviour {
     {
         return Vector3.Distance(zeroPoint.transform.position, objectPoint.transform.position); ;
     }
+
+
 
 
     public float getNPdistancetoZero()

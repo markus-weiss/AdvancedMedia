@@ -5,8 +5,9 @@ using UnityEngine;
 public class NahPunktScript : MonoBehaviour {
 
     public GameObject UI_Controller;
+    public GameObject DeviationAngle;
 
-
+    [Range(-2,2)]
     private float nahPunktValue;
 
     // Use this for initialization
@@ -17,13 +18,13 @@ public class NahPunktScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //fernPunktValue = UI_Controller.GetComponent<UI_ControllerScript>().getUIFernpunktSlider() * 30;
-        //print(fernPunktValue);
+        nahPunktValue = DeviationAngle.GetComponent<DeviationsAngle>().getNPdistancetoZero();
+        print(nahPunktValue);
         SetScale();
     }
 
     public void SetScale()
     {
-        //transform.localScale = new Vector3(fernPunktValue / 60, fernPunktValue / 60, fernPunktValue / 60);
+        transform.localScale = new Vector3(nahPunktValue / 60, nahPunktValue / 60, nahPunktValue / 60);
     }
 }

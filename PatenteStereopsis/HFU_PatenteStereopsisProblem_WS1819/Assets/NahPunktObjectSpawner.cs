@@ -29,12 +29,14 @@ public class NahPunktObjectSpawner : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        rotateValue = GetComponentInParent<Transform>().transform.eulerAngles.y;
+
         nahPunktDist = DevAngleObj.GetComponent<DeviationsAngle>().getNPdistancetoZero();
         //rotateValue = GetComponentInParent<Transform>().transform.eulerAngles.y;
         //sliderValue = DevAngleObj.GetComponent<DeviationsAngle>().getNPdistancetoZero();
 
         inst.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + nahPunktDist);
-        print(nahPunktDist);
+        //print(nahPunktDist);
         //inst.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + sliderValue);
         //inst.transform.eulerAngles = new Vector3(0, rotateValue,0);
         //transform.eulerAngles = new Vector3(0, rotateValue,0);
