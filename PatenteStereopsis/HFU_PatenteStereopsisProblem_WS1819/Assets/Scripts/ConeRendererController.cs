@@ -10,14 +10,22 @@ public class ConeRendererController : MonoBehaviour {
     private Transform startObject;
     public int lengthOfLineRenderer;
 
+    public GameObject uIController;
+
+    public float endSize;
+
     //Linrenderer Colors
-    Color c1;
-    Color c2;
+    public Color c1;
+    public Color c2;
 
     private void Start()
     {
-        c1 = GetComponentInParent<Vertices>().c1;
-        c2 = GetComponentInParent<Vertices>().c2;
+        //c1 = GetComponentInParent<Vertices>().c1;
+        //c2 = GetComponentInParent<Vertices>().c2;
+
+        c1 = new Color(0f, 1f, 0f, 0.5f);
+        c2 = new Color(0f, 1f, 0f, 1f);
+
     }
 
     private void Update()
@@ -39,12 +47,18 @@ public class ConeRendererController : MonoBehaviour {
         lineRenderer.SetPosition(0, startPos);
 
         //Set Target Scale and Position
-        Vector3 targetPos = lineTarget.position;
+        //Vector3 targetPos = lineTarget.position;
         Transform targetScale = lineTarget;
 
-        lineRenderer.SetPosition(1, targetPos);
-        lineRenderer.widthMultiplier = targetScale.localScale.x;
+        //lineRenderer.SetPosition(1, targetPos);
 
+
+
+        Vector3 targetPos = GetComponentInParent<Transform>().transform.position;
+        lineRenderer.useWorldSpace = false;
+        lineRenderer.SetPosition(1, new Vector3(targetPos.x, targetPos.y, targetPos.z + 30));
+        //lineRenderer.widthMultiplier = targetScale.localScale.x;
+        lineRenderer.widthMultiplier = endSize;
     }
 
 }

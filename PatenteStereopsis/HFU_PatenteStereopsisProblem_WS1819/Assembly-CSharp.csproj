@@ -62,7 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DeviationsAngle.cs" />
+    <Compile Include="Assets\FernPunkt_Script.cs" />
+    <Compile Include="Assets\FernPunktObjectSpawner.cs" />
+    <Compile Include="Assets\FernPunktUI_Value.cs" />
     <Compile Include="Assets\IcoSphereCreator\IcoSphereCreator.cs" />
+    <Compile Include="Assets\NahPunktScript.cs" />
     <Compile Include="Assets\Scripts\ConeRendererController.cs" />
     <Compile Include="Assets\Scripts\ReverseNormals.cs" />
     <Compile Include="Assets\Scripts\UI_ControllerScript.cs" />

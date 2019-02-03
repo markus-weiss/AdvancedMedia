@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class DeviationsAngle : MonoBehaviour {
 
-    public GameObject ObjectSpawnerONE;
-    public GameObject ObjectSpawnerTWO;
+    public GameObject objectOne;
+    public GameObject objectTwo;
 
-    private float radius;
+    public Camera vrCam;
 
+    
     // Use this for initialization
     void Start () {
 	
@@ -16,8 +17,30 @@ public class DeviationsAngle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //radius = ObjectSpawnerONE.GetComponent<Vertices>().GetRadius();
-        print(ObjectSpawnerONE.GetComponent<Vertices>().GetRadius());
-        print(ObjectSpawnerTWO.GetComponent<Vertices>().GetRadius());
+
+        // b
+        float objectdistance = Vector3.Distance(objectOne.transform.position, objectTwo.transform.position);
+        // a
+        float distanceToZero = Vector3.Distance(objectOne.transform.position, vrCam.transform.position);
+        // n 
+        //float eyeDist = 0.065f;
+        float eyeDist = 5;
+
+
+        float tan = objectdistance + distanceToZero / eyeDist;
+
+
+        float angle = Mathf.Rad2Deg * Mathf.Atan(tan);
+
+        print(angle);
+
+        //print(objectdistance + " : " + distanceToZero + " : " + angle);
+
+        //float hypotenuse = Mathf.Sqrt((objectdistance + distanceToZero)* objectdistance + distanceToZero) + (eyeDist) * (eyeDist);
+
+        //print(distanceToZero + " : " +  angle + " : " + eyeDist);
+        ////radius = ObjectSpawnerONE.GetComponent<Vertices>().GetRadius();
+        //print(ObjectSpawnerONE.GetComponent<Vertices>().GetRadius());
+        //print(ObjectSpawnerTWO.GetComponent<Vertices>().GetRadius());
 	}
 }
