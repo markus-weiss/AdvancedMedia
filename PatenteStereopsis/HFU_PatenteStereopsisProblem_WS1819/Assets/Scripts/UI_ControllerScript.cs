@@ -12,6 +12,8 @@ public class UI_ControllerScript : MonoBehaviour {
     [Range(4,29)]
     public Slider uIFernpunktSlider;
 
+    public Slider uiDeviationAngleSlider;
+
     public Camera topDownCamera;
     public Camera fristPersonCamera;
 
@@ -32,6 +34,7 @@ public class UI_ControllerScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
 
     public float getUIDevAngleSlider()
     {

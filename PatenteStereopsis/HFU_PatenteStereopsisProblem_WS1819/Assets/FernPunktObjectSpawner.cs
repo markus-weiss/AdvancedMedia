@@ -10,13 +10,12 @@ public class FernPunktObjectSpawner : MonoBehaviour {
     public GameObject UI_Controller;
     private float sliderValue;
 
-    [Range(0,360)]
-    public float rotateValue;
+    private float rotateValue;
 
     void Start()
     {
-        //inst = Instantiate(objectprefab, new Vector3(transform.position.x, transform.position.y, transform.position.z + sliderValue), Quaternion.Euler(0,90,0));
-        //inst.transform.SetParent(transform);
+        inst = Instantiate(objectprefab, new Vector3(transform.position.x, transform.position.y, transform.position.z + sliderValue + 7.8f), Quaternion.Euler(90,0,0));
+        inst.transform.SetParent(transform);
 
 
     }
