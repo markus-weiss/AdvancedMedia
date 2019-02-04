@@ -20,7 +20,7 @@ public class UI_Controller_New : MonoBehaviour {
 
     //==================DeviationAngle==========================
     //DeviationMinMax
-    public float devationMin = -2;
+    //public float devationMin = -2;
     public float devationMax = 2;
     //DevitionAngle
     private Slider deviationAngle;
@@ -30,8 +30,8 @@ public class UI_Controller_New : MonoBehaviour {
     //==================EyeDistance==========================
     // Eye Dist minmax lässt sich nicht setzen
     //EyeDistanceRange
-    public float eyeDistmin = 30f;
-    public float eyeDistmax = 100f;
+    public float eyeDistmin = 30;
+    public float eyeDistmax = 80;
     //EyeDistance
     private Slider eyeDistance;
     private float eyeDistanceValue;
@@ -113,7 +113,7 @@ public class UI_Controller_New : MonoBehaviour {
     // Nicht Implementiert 
     private void SetSliderRange()
     {
-        /*
+        
         // RangeFunktion FernPunkt
         if (fernPunktSliderValue < minRange)
         {
@@ -137,16 +137,16 @@ public class UI_Controller_New : MonoBehaviour {
 
         
         // EyeDist Funktion
-        if (eyeDistance.value < 30)
+        if (eyeDistanceValue < eyeDistmin)
         {
-            eyeDistanceValue = 30;
+            eyeDistanceValue = eyeDistmin;
         }
-        else if (eyeDistance.value > 80)
+        else if (eyeDistanceValue > eyeDistmax)
         {
-            eyeDistanceValue = 80;
+            eyeDistanceValue = eyeDistmax;
         }
         
-        
+        /*
         // DevAngle Funktion
         if (deviationAngle.value < 0.5f)
         {
