@@ -47,7 +47,7 @@ public class UI_Controller_New : MonoBehaviour {
 
 
         GetFernPunktSliderObjects();
-        GetUIValues();
+        SetUIValuesObjects();
     }
 	
 	// Update is called once per frame
@@ -83,7 +83,7 @@ public class UI_Controller_New : MonoBehaviour {
  
     }
 
-    private void GetUIValues()
+    private void SetUIValuesObjects()
     {
         fernPunktUIText = GameObject.Find("FernPunktValue").GetComponentInChildren<Text>();
         nahPunktUIText = GameObject.Find("NahPunktValue").GetComponentInChildren<Text>();
@@ -102,6 +102,13 @@ public class UI_Controller_New : MonoBehaviour {
        
 
     }
+
+    //To Call From OutSide to get UI Values
+    public float FernPunktSliderValue()
+    {
+        return fernPunktSliderValue;
+
+    } 
 
     // Nicht Implementiert 
     private void SetSliderRange()
