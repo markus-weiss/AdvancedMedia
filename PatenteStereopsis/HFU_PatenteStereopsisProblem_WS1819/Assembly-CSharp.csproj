@@ -61,18 +61,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DeviationsAngle.cs" />
-    <Compile Include="Assets\FernPunkt_Script.cs" />
-    <Compile Include="Assets\FernPunktObjectSpawner.cs" />
-    <Compile Include="Assets\FernPunktUI_Value.cs" />
     <Compile Include="Assets\IcoSphereCreator\IcoSphereCreator.cs" />
-    <Compile Include="Assets\NahPunktObjectSpawner.cs" />
-    <Compile Include="Assets\NahPunktScript.cs" />
+    <Compile Include="Assets\ObjectController_New.cs" />
     <Compile Include="Assets\Scripts\ConeRendererController.cs" />
+    <Compile Include="Assets\Scripts\DeviationsAngle.cs" />
+    <Compile Include="Assets\Scripts\FernPunkt_Script.cs" />
+    <Compile Include="Assets\Scripts\FernPunktObjectSpawner.cs" />
+    <Compile Include="Assets\Scripts\FernPunktUI_Value.cs" />
+    <Compile Include="Assets\Scripts\NahPunktObjectSpawner.cs" />
+    <Compile Include="Assets\Scripts\NahPunktScript.cs" />
     <Compile Include="Assets\Scripts\ReverseNormals.cs" />
+    <Compile Include="Assets\Scripts\SetDeviationAngleValue.cs" />
     <Compile Include="Assets\Scripts\UI_ControllerScript.cs" />
     <Compile Include="Assets\Scripts\Vertices.cs" />
-    <Compile Include="Assets\SetDeviationAngleValue.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestThrow.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestTrackedCamera.cs" />
@@ -228,6 +229,7 @@
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedCamera.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_TrackedObject.cs" />
     <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
+    <Compile Include="Assets\UI_Controller_New.cs" />
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
