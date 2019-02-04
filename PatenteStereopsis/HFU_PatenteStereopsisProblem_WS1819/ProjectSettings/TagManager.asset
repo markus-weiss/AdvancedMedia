@@ -18,7 +18,7 @@ TagManager:
   - FirstPersonCamera
   - VR_UI_Camera
   - NoiseBox
-  - 
+  - ConeRenderer
   - 
   - 
   - 
