@@ -16,8 +16,8 @@ TagManager:
   - PostProcessing
   - TopDownCamera
   - FirstPersonCamera
-  - 
-  - 
+  - VR_UI_Camera
+  - NoiseBox
   - 
   - 
   - 
