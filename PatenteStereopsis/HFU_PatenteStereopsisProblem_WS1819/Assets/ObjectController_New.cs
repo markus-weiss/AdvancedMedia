@@ -93,11 +93,12 @@ public class ObjectController_New : MonoBehaviour {
 
         // die Position kann über den Scale gesetzt werden
         setCircleObjectPositions(circlePlaneNahPunktObjekt, nahObjektScale);
-        setCircleObjectPositions(circlePlaneFernPunktObjekt, fernObjektScale);
+        //setCircleObjectPositions(sphere, fernObjektScale);
 
         //Der Scale des Objekts wird über den Faktor gesetzt
         setCircleObjectScale(circlePlaneNahPunktObjekt, circleObjektScaleFaktorNah);
-        setCircleObjectScale(circlePlaneFernPunktObjekt, circleObjektScaleFaktorFern);
+        //Scale der Sphere
+        SetSphereObjectScale(sphere, fernObjektScale);
 
     }
 
@@ -147,6 +148,12 @@ public class ObjectController_New : MonoBehaviour {
         //print(circlePlaneObject.transform.position.z);
     }
 
+    public void SetSphereObjectScale(GameObject sphere, float scale)
+    {
+        //var ts = sphere.transform.localScale;
+        sphere.transform.localScale = new Vector3(scale *2, scale*2, scale*2);
+
+    }
 
 
     public void setCircleObjectScale(GameObject circlePlaneObject, float scale)
