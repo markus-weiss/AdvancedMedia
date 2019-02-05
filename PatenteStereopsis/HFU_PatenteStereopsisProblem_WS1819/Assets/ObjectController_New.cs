@@ -24,27 +24,33 @@ public class ObjectController_New : MonoBehaviour {
     private GameObject circlePlaneFernPunktObjekt;
 
 
+    private GameObject sphere;
+
     //CirclePlanObjects
     private GameObject circlePlaneParent;
     private GameObject playerVRCamera;
 
 
     //EyeCones
+    
     private GameObject eyeConeParent;
-    private GameObject leftEye;
-    private GameObject rightEye;
+    private GameObject leftEyeParent;
+    private GameObject rightEyeParent;
 
 
     private void Awake()
     {
         //Setze EyeCone
         eyeConeParent = GameObject.Find("EyeConeParent");
-        leftEye = GameObject.Find("LeftEye");
-        rightEye = GameObject.Find("RightEye");
+        leftEyeParent = GameObject.Find("LeftEyeParent");
+        rightEyeParent = GameObject.Find("RightEyeParent");
 
         //Setze Nah und FernObjekt
         circlePlaneNahPunktObjekt = GameObject.Find("CirclePlaneNahObjekt");
         circlePlaneFernPunktObjekt = GameObject.Find("CirclePlaneFernObjekt");
+
+
+        sphere = GameObject.Find("30mSphere");
 
         //Get User Camera
         playerVRCamera = GameObject.Find("Camera");
@@ -72,6 +78,10 @@ public class ObjectController_New : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        // EyeCones look at Target
+        LookAtObject(leftEyeParent, circlePlaneNahPunktObjekt);
+        LookAtObject(rightEyeParent, circlePlaneNahPunktObjekt);
+
         //Set CircleScale
         CircleScale(fernObjektCircle, fernObjektScale);
         CircleScale(nahObjektCircle, nahObjektScale);
@@ -79,6 +89,7 @@ public class ObjectController_New : MonoBehaviour {
         //
         //SetVRCameraOrientaionToObjectParent(playerVRCamera);
         setObjectAsRotationParent(circlePlaneParent.transform, playerVRCamera.transform);
+        setObjectAsPositionnParent(circlePlaneParent.transform, playerVRCamera.transform);
 
         // die Position kann über den Scale gesetzt werden
         setCircleObjectPositions(circlePlaneNahPunktObjekt, nahObjektScale);
@@ -90,10 +101,23 @@ public class ObjectController_New : MonoBehaviour {
 
     }
 
+    // Schaut auf LookAt Object
+    public void LookAtObject(GameObject eye, GameObject target)
+    {
+        eye.transform.LookAt(target.transform);
+    } 
+
 
     public void setObjectAsRotationParent(Transform childObject, Transform parentObject)
     {
-        //childObject.localRotation = parentObject.rotation;
+        childObject.rotation = parentObject.rotation;
+        //childObject.RotateAround(parentObject,);
+        //childObject.transform.rotation = parentObject.transform.rotation;
+        //childObject.LookAt(parentObject);
+    }
+    public void setObjectAsPositionnParent(Transform childObject, Transform parentObject)
+    {
+        childObject.position = parentObject.position;
         //childObject.RotateAround(parentObject,);
         //childObject.transform.rotation = parentObject.transform.rotation;
         //childObject.LookAt(parentObject);
@@ -119,7 +143,7 @@ public class ObjectController_New : MonoBehaviour {
     public void setCircleObjectPositions(GameObject circlePlaneObject, float position)
     {
         var tp =  transform.position;
-        circlePlaneObject.transform.position = new Vector3(tp.x, tp.y, tp.z + position);
+        circlePlaneObject.transform.localPosition = new Vector3(tp.x, tp.y, tp.z + position);
         //print(circlePlaneObject.transform.position.z);
     }
 
@@ -127,7 +151,7 @@ public class ObjectController_New : MonoBehaviour {
 
     public void setCircleObjectScale(GameObject circlePlaneObject, float scale)
     {
-        float distanceFaktor = circlePlaneObject.transform.position.z;
+        float distanceFaktor = circlePlaneObject.transform.localPosition.z;
         var ts = transform.localScale;
 
         //circlePlaneObject.transform.localScale = new Vector3(scale / 60, scale / 60, scale / 60);
