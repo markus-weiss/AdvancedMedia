@@ -16,11 +16,11 @@ public class ObjectController_New : MonoBehaviour {
     private GameObject nahObjektCircle;
 
 
-
+    [Range(0.1f,1)]
     public float circleObjektScaleFaktorNah = 2f;
     private GameObject circlePlaneNahPunktObjekt;
 
-    public float circleObjektScaleFaktorFern = 2f;
+    //public float circleObjektScaleFaktorFern = 2f;
     private GameObject circlePlaneFernPunktObjekt;
 
 
@@ -32,10 +32,13 @@ public class ObjectController_New : MonoBehaviour {
 
 
     //EyeCones
-    
     private GameObject eyeConeParent;
+    [Range(0.050f,0.07f)]
+    public float eyedistance;
     private GameObject leftEyeParent;
     private GameObject rightEyeParent;
+
+
 
 
     private void Awake()
@@ -67,16 +70,21 @@ public class ObjectController_New : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        eyedistance = 0.065f;
+
         fernObjektScale = 2;
         nahObjektScale = 2;
 
         circleObjektScaleFaktorNah = 0.4f;
-        circleObjektScaleFaktorFern = 0.5f;
+        //circleObjektScaleFaktorFern = 0.5f;
 
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        //SetEyeDistance
+        SetEyeDistance(eyedistance ,leftEyeParent, rightEyeParent);
 
         // EyeCones look at Target
         LookAtObject(leftEyeParent, circlePlaneNahPunktObjekt);
@@ -100,6 +108,27 @@ public class ObjectController_New : MonoBehaviour {
         //Scale der Sphere
         SetSphereObjectScale(sphere, fernObjektScale);
 
+
+        //Sorge dafür das, das nahpunktObjekt immer näher ist 
+        if (nahObjektScale >= fernObjektScale)
+        {
+            //nahObjektScale = fernObjektScale;
+            fernObjektScale = nahObjektScale;
+            //nahObjektScale = nahObjektScale;
+        }
+    }
+
+
+    // Set die halbe augendistanze für jedes auge in plus und minus x
+    public void SetEyeDistance(float eyedistance, GameObject leftEye, GameObject rightEye)
+    {
+        Vector3 tp = transform.position;
+        Vector3 leftEyePos = leftEye.transform.localPosition;
+        Vector3 rightEyePos = rightEye.transform.localPosition;
+
+        leftEye.transform.localPosition = new Vector3(tp.x + eyedistance / 2, tp.y, tp.z);
+        rightEye.transform.localPosition = new Vector3(tp.x - eyedistance / 2, tp.y, tp.z);
+        //print(rightEyePos.x);
     }
 
     // Schaut auf LookAt Object
