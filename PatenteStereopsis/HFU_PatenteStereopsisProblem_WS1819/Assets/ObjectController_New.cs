@@ -8,22 +8,21 @@ public class ObjectController_New : MonoBehaviour {
 
     // Nah und FernPunkt
     // TopDownCircle
-    [Range(2, 30)]
+    //[Range(2, 30)]
     public float fernObjektScale;
     private GameObject fernObjektCircle;
 
-    [Range(2, 30)]
+    //[Range(2, 30)]
     public float nahObjektScale;
     private GameObject nahObjektCircle;
 
 
-    [Range(0.1f,1)]
+    //[Range(0.1f,1)]
     public float circleObjektScaleFaktorNah = 2f;
     private GameObject circlePlaneNahPunktObjekt;
 
     //public float circleObjektScaleFaktorFern = 2f;
     private GameObject circlePlaneFernPunktObjekt;
-
 
     private GameObject sphere;
 
@@ -89,10 +88,13 @@ public class ObjectController_New : MonoBehaviour {
 	void Update () {
 
 
-        //eyedistance = UI_Controller.GetComponent<UI_Controller_New>().eyeDistanceValue;
-        //fernObjektScale = UI_Controller.GetComponent<UI_Controller_New>().fernPunktSliderValue;
-        //nahObjektScale = UI_Controller.GetComponent<UI_Controller_New>().nahPunktSliderValue;
+        eyedistance = UI_Controller.GetComponent<UI_Controller_New>().eyeDistanceSlider.value * 0.001f;
+        //print( UI_Controller.GetComponent<UI_Controller_New>().eyeDistanceSlider.value * 0.001f);
+        fernObjektScale = UI_Controller.GetComponent<UI_Controller_New>().fernPunktSlider.value;
+        nahObjektScale = UI_Controller.GetComponent<UI_Controller_New>().nahPunktSlider.value;
         //print(UI_Controller.GetComponent<UI_Controller_New>().nahPunktSliderValue);
+        circleObjektScaleFaktorNah = UI_Controller.GetComponent<UI_Controller_New>().ObjectSlider.value;
+
 
         //SetEyeDistance
         SetEyeDistance(eyedistance ,leftEyeParent, rightEyeParent);

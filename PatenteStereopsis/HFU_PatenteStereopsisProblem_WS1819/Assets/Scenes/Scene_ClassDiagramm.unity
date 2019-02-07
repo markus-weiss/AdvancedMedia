@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 14547912}
   - component: {fileID: 14547911}
   m_Layer: 5
-  m_Name: NahPunktValue
+  m_Name: ObjectScaleValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1516,7 +1516,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!43 &540149943
+--- !u!43 &527575455
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1965,10 +1965,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 646651794}
   m_HandleRect: {fileID: 2250726}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 0.1
+  m_MaxValue: 30
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2469,10 +2469,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 597859416}
   m_HandleRect: {fileID: 2124076662}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.1
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2589,11 +2589,11 @@ Prefab:
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 540149943}
+      objectReference: {fileID: 527575455}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1642747329}
+      objectReference: {fileID: 2013373228}
     - target: {fileID: 146900, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_IsActive
       value: 1
@@ -3412,9 +3412,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1576814417}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 80
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 12.4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3794,34 +3794,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1259478530}
   m_CullTransparentMesh: 0
---- !u!1 &1263846951
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1263846952}
-  m_Layer: 0
-  m_Name: Math_Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1263846952
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1263846951}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1475.7539, y: 944.5256, z: -5.0603476}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1283040817
 GameObject:
   m_ObjectHideFlags: 0
@@ -4180,10 +4152,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1475638672}
   m_HandleRect: {fileID: 1126022191}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 0.1
+  m_MaxValue: 30
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4978,10 +4950,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1449648344}
   m_HandleRect: {fileID: 924801738}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 35
+  m_MaxValue: 75
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 35
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5083,7 +5055,7 @@ GameObject:
   - component: {fileID: 1636091922}
   - component: {fileID: 1636091921}
   m_Layer: 5
-  m_Name: Background
+  m_Name: Dev_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5119,7 +5091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5141,39 +5113,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636091919}
   m_CullTransparentMesh: 0
---- !u!21 &1642747329
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1680598836
 Prefab:
   m_ObjectHideFlags: 0
@@ -5585,7 +5524,7 @@ Transform:
   - {fileID: 1780902903}
   - {fileID: 1053091357}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1817396419
 MonoBehaviour:
@@ -5800,7 +5739,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'ObjectScale:'
+  m_Text: 'ObjScale:'
 --- !u!222 &1868479678
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5974,15 +5913,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d338e39a9c8f844870423fb26b86ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRange: 4
-  maxRange: 30
-  fernPunktSliderValue: 0
-  nahPunktSliderValue: 0
-  devationMax: 2
-  deviationAngleValue: 0
-  eyeDistmin: 50
-  eyeDistmax: 80
-  eyeDistanceValue: 0
+  fernPunktSlider: {fileID: 0}
+  nahPunktSlider: {fileID: 0}
+  eyeDistanceSlider: {fileID: 0}
+  ObjectSlider: {fileID: 0}
 --- !u!4 &1941817430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 19e6d8d1c09d00144a24ab80154c9fce,
@@ -6028,7 +5962,7 @@ GameObject:
   - component: {fileID: 1976557284}
   - component: {fileID: 1976557283}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Dev_Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6214,6 +6148,39 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19e6d8d1c09d00144a24ab80154c9fce, type: 3}
   m_IsPrefabAsset: 0
+--- !u!21 &2013373228
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2069200542
 GameObject:
   m_ObjectHideFlags: 0
@@ -6321,8 +6288,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.012512207, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -7.299988, y: 3.2000122}
+  m_SizeDelta: {x: 30.9, y: 6.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2069361720
 MonoBehaviour:
