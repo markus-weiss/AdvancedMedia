@@ -5,17 +5,28 @@ using UnityEngine.UI;
 
 public class UI_Controller_New : MonoBehaviour {
 
+
+    //====================CamScreenToggles=================================
+    private GameObject OnOffVrCam;
+    private GameObject OnOff3rdCam;
+    private Toggle vr;
+    private Toggle rd;
+    private GameObject vrCamUITexture;
+    private GameObject rdCamUITexture;
+
+
+
     //=============Nah-FernPunkt=============================
     //Nah und FernpunktRange
     public float minRange = 4;
     public float maxRange = 30;
     //FernPunktSlider
     private Slider fernPunktSlider;
-    private float fernPunktSliderValue;
+    public float fernPunktSliderValue;
     private Text fernPunktUIText;
     //NahPunktSlider
     private Slider nahPunktSlider;
-    private float nahPunktSliderValue;
+    public float nahPunktSliderValue;
     private Text nahPunktUIText;
 
     //==================DeviationAngle==========================
@@ -24,7 +35,7 @@ public class UI_Controller_New : MonoBehaviour {
     public float devationMax = 2;
     //DevitionAngle
     private Slider deviationAngle;
-    private float deviationAngleValue;
+    public float deviationAngleValue;
     private Text deviationAngleUIText;
 
     //==================EyeDistance==========================
@@ -34,7 +45,7 @@ public class UI_Controller_New : MonoBehaviour {
     public float eyeDistmax = 80;
     //EyeDistance
     private Slider eyeDistance;
-    private float eyeDistanceValue;
+    public float eyeDistanceValue;
     private Text eyeDistanceUIText;
 
 
@@ -45,13 +56,54 @@ public class UI_Controller_New : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
+        vrCamUITexture = GameObject.Find("VR_Camera");
+        rdCamUITexture = GameObject.Find("TopDownCamera");
 
         GetFernPunktSliderObjects();
         SetUIValuesObjects();
+
+        // Get Objects
+        OnOffVrCam = GameObject.Find("VR-Toggle");
+        OnOff3rdCam = GameObject.Find("3rd-PersonToggle");
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void Start()
+    {
+        SetCameraToggleEvent();
+    }
+
+
+    void SetCameraToggleEvent()
+    {
+        // Get Toggles from Objects
+        vr = OnOffVrCam.GetComponent<Toggle>();
+        rd = OnOff3rdCam.GetComponent<Toggle>();
+
+        vr.onValueChanged.AddListener(delegate {
+            ToggleValueChanged(vr);
+        });
+        rd.onValueChanged.AddListener(delegate {
+            ToggleValueChanged(rd);
+        });
+
+        print(vr.isOn + ":" + rd.isOn);
+
+        //Initialize the Text to say whether the Toggle is in a positive or negative state
+        //m_Text.text = "Toggle is : " + m_Toggle.isOn;
+    }
+
+    void ToggleValueChanged(Toggle change)
+    {
+
+        vrCamUITexture.SetActive(vr.isOn);
+        rdCamUITexture.SetActive(rd.isOn);
+        print(vr.isOn + ":" + rd.isOn);
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+    
 
         // Get Values from UI
         SetSliderValues();

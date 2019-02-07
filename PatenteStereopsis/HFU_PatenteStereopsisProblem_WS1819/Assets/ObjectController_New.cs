@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectController_New : MonoBehaviour {
 
+    private GameObject UI_Controller;
 
     // Nah und FernPunkt
     // TopDownCircle
@@ -43,6 +44,10 @@ public class ObjectController_New : MonoBehaviour {
 
     private void Awake()
     {
+
+        //GetUIKontroller
+        UI_Controller = GameObject.Find("UI_Controller");
+
         //Setze EyeCone
         eyeConeParent = GameObject.Find("EyeConeParent");
         leftEyeParent = GameObject.Find("LeftEyeParent");
@@ -82,6 +87,12 @@ public class ObjectController_New : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+        //eyedistance = UI_Controller.GetComponent<UI_Controller_New>().eyeDistanceValue;
+        //fernObjektScale = UI_Controller.GetComponent<UI_Controller_New>().fernPunktSliderValue;
+        //nahObjektScale = UI_Controller.GetComponent<UI_Controller_New>().nahPunktSliderValue;
+        //print(UI_Controller.GetComponent<UI_Controller_New>().nahPunktSliderValue);
 
         //SetEyeDistance
         SetEyeDistance(eyedistance ,leftEyeParent, rightEyeParent);
