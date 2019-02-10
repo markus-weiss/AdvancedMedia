@@ -84,29 +84,9 @@ public class ObjectController_New : MonoBehaviour {
 
     }
 
-    void SetShaderDistance()
-    {
-
-        sphere.GetComponent<MeshRenderer>().material.SetVector("_OBJ_POS", new Vector3(0,0, nahObjektScale * 10));
-
-
-        //circlePlaneNahPunktObjekt.GetComponent<MeshRenderer>().material.SetVector("_VRPOS", transform.position);
-        //circlePlaneNahPunktObjekt.GetComponent<MeshRenderer>().material.SetVector("_value", new Vector3(0, 0, fernObjektScale));
-
-
-        //sphere.GetComponent<MeshRenderer>().material.SetVector("_VRPOS", transform.position);
-        //sphere.GetComponent<MeshRenderer>().material.SetVector("_OBJ_POS", new Vector3(0,0, nahObjektScale * 1000));
-
-        /*
-        sphere.GetComponent<MeshRenderer>().material.SetVector("_VRPOS", transform.position);
-        sphere.GetComponent<MeshRenderer>().material.SetVector("_OBJ_POS", new Vector3(30, 30, 30*fernObjektScale));
-        */
-    }
 
     // Update is called once per frame
     void Update () {
-
-        SetShaderDistance();
 
         eyedistance = UI_Controller.GetComponent<UI_Controller_New>().eyeDistanceSlider.value * 0.001f;
         //print( UI_Controller.GetComponent<UI_Controller_New>().eyeDistanceSlider.value * 0.001f);
@@ -141,14 +121,15 @@ public class ObjectController_New : MonoBehaviour {
             fernObjektScale = nahObjektScale;
             //nahObjektScale = nahObjektScale;
         }
-        /*
+        
         else if (fernObjektScale < nahObjektScale)
         {
             nahObjektScale = fernObjektScale;
         }
-        */
+        
         else
         {
+
             //CircleScale(nahObjektCircle, nahObjektScale);
 
             //Die Position kann über den Scale gesetzt werden
@@ -156,6 +137,7 @@ public class ObjectController_New : MonoBehaviour {
         }
         CircleScale(nahObjektCircle, nahObjektScale);
         setCircleObjectPositions(circlePlaneNahPunktObjekt, nahObjektScale);
+
     }
 
 
@@ -193,16 +175,6 @@ public class ObjectController_New : MonoBehaviour {
         //childObject.LookAt(parentObject);
     }
 
-    /*
-    //Holt VR-Camera Orientation und setzt sie auf den ObjektParent
-    public void SetVRCameraOrientaionToObjectParent(Transform camera)
-    {
-        circlePlaneParent.transform.RotateAround = camera.rotation;
-    }
-    */
-
-
-
     public void CircleScale(GameObject objectToScale ,float scale)
     {
         objectToScale.transform.localScale = new Vector3(scale / 60, scale / 60 , scale  / 60);
@@ -219,7 +191,7 @@ public class ObjectController_New : MonoBehaviour {
     public void SetSphereObjectScale(GameObject sphere, float scale)
     {
         //var ts = sphere.transform.localScale;
-        sphere.transform.localScale = new Vector3(scale, scale, scale);
+        sphere.transform.localScale = new Vector3(scale*2, scale*2, scale*2);
 
     }
 

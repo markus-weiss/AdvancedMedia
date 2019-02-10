@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 61
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 1
@@ -16,8 +17,12 @@ MonoBehaviour:
   - __PanelContainer__rootVisualContainer__39e18b79ce781e84ca431ce5fd0bd1f9__MaterialGraphView__UnityEditor.Experimental.UIElements.GraphView.GraphView+PersistedSelection
   - __PanelContainer__rootVisualContainer__95208b63dc530fb4e970707df9dcdae8__MaterialGraphView__UnityEditor.Experimental.UIElements.GraphView.GraphView+PersistedViewTransform
   - __PanelContainer__rootVisualContainer__95208b63dc530fb4e970707df9dcdae8__MaterialGraphView__UnityEditor.Experimental.UIElements.GraphView.GraphView+PersistedSelection
+  - __PanelContainer__rootVisualContainer__c44cc4ffbc7c4314d823e38f20bef594__MaterialGraphView__UnityEditor.Experimental.UIElements.GraphView.GraphView+PersistedViewTransform
+  - __PanelContainer__rootVisualContainer__c44cc4ffbc7c4314d823e38f20bef594__MaterialGraphView__UnityEditor.Experimental.UIElements.GraphView.GraphView+PersistedSelection
   m_Values:
   - '{}'
   - '{}'
-  - '{"position":{"x":458.0421447753906,"y":216.66024780273438,"z":0.0},"scale":{"x":0.6575162410736084,"y":0.6575162410736084,"z":1.0}}'
-  - '{"m_Version":505,"m_SelectedElements":[]}'
+  - '{}'
+  - '{}'
+  - '{"position":{"x":888.0000610351563,"y":448.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}}'
+  - '{"m_Version":74,"m_SelectedElementsArray":["1be14d75-a847-42c9-8ee2-c787e148ea2c"]}'
