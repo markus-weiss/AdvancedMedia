@@ -28,12 +28,12 @@ public class scale_Mar : MonoBehaviour
         
         scaleFern = objectController.GetComponent<ObjectController_New>().fernObjektScale;
         scaleNah = objectController.GetComponent<ObjectController_New>().nahObjektScale;
-        //print(scaleFern - scaleNah);
+        print(scaleFern - scaleNah);
 
         GetComponent<MeshRenderer>().material.SetVector("_v1", new Vector3(scaleFern * factor, scaleFern * factor, scaleFern  * factor));
-        //GetComponent<MeshRenderer>().material.SetVector("_v1", new Vector3((scaleFern - scaleNah) * factor - scaleFern, (scaleFern - scaleNah) * factor - scaleFern, (scaleFern - scaleNah) * factor - scaleFern));
+        GetComponent<MeshRenderer>().material.SetVector("_v1", new Vector3((scaleFern - scaleNah) * factor - scaleFern, (scaleFern - scaleNah) * factor - scaleFern, (scaleFern - scaleNah) * factor - scaleFern));
         
-
+        
 /*
         if (scaleNah <= 2f)
         {
