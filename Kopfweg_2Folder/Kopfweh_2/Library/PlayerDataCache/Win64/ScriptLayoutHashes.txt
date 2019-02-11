@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/schnu/Desktop/Builds_ADvancedMedia/Build_3/Kopfweh_2.exe
+C:/Users/schnu/Desktop/Builds_ADvancedMedia/Build_HD_Window/Kopfweh_2.exe
 SceneListBegin?
 Assets/Scenes/KopfWeh_Scene.unity
 SceneListEnd?
@@ -75,8 +75,6 @@ f542c1afca5bb4022f91fdda19b8d622 Unity.Postprocessing.Runtime.dll:UnityEngine.Re
 f53353aadf7a88ea54da9f1e48a6d181 SteamVR.dll:Valve.VR.SteamVR_LoadLevel
 98ad81e9f689a492509f07e75b810aaa Unity.TextMeshPro.dll:TMPro.TMP_InputField
 445c4578e5fe3309b82f234574ed26a5 SteamVR.dll:Valve.VR.InteractionSystem.Equippable
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 0a178a1c85198b9dad8fc799b8bfaa65 SteamVR.dll:Valve.VR.InteractionSystem.BodyCollider
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.SteamVR_CameraMask
 cd8bb0a177cc56c4260e5d1c0576be16 SteamVR.dll:Valve.VR.SteamVR_Settings
@@ -258,6 +256,7 @@ d9aa78d36ef713c458d0586b2aaa0b81 SteamVR.dll:Valve.VR.SteamVR_Behaviour_Pose
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+214f3a28910e91af078be89c0b0479a4 Assembly-CSharp.dll:.scale_Mar
 9cdd5757306ab9183dcec420028a84cf SteamVR.dll:Valve.VR.SteamVR_PlayArea
 c69e10d82263d95eba11560757139ceb Unity.RenderPipelines.Lightweight.Runtime.dll:UnityEngine.Experimental.Rendering.LightweightPipeline.LWRPAdditionalCameraData
 71bb6a6b6c8f052f948db64c7dd3ca4f SteamVR.dll:Valve.VR.SteamVR_SphericalProjection

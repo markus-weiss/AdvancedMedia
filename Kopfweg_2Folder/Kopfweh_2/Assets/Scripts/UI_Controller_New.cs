@@ -71,7 +71,7 @@ public class UI_Controller_New : MonoBehaviour {
         eyeDistanceSlider = GameObject.Find("EyeDistance").GetComponentInChildren<Slider>();       
         deviationAngleSlider = GameObject.Find("DeviationAngleSlider").GetComponentInChildren<Slider>();
         eyeDistanceSlider.value = 65;
-        ObjectSlider.value = 0.5f;
+        ObjectSlider.value = 0.1f;
 
         // Set Text Objects
         fernPunktUIText = GameObject.Find("FernPunktValue").GetComponentInChildren<Text>();
