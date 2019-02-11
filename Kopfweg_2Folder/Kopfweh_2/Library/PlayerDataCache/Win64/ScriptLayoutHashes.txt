@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/schnu/Desktop/Builds_ADvancedMedia/Build_1024-768_Window/Kopfweh_2.exe
+C:/Users/schnu/Desktop/Neuer Ordner/Build Window/Kopfweh_2.exe
 SceneListBegin?
 Assets/Scenes/KopfWeh_Scene.unity
 SceneListEnd?
