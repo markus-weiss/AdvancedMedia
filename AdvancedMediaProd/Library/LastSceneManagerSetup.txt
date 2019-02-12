@@ -1,4 +1,0 @@
-sceneSetups:
-- path: F:/Studium/AdvancedMedia/IcoSphereCreator-master/Assets/IcoSphereCreator/Samples/IcoSphereSample.unity
-  isLoaded: 1
-  isActive: 1
